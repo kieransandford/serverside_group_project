@@ -29,7 +29,7 @@ public class Trainer {
         this.pokemons = new ArrayList<Pokemon>();
     }
 
-    // empty class
+    // no arg constructor
 
     public Trainer(){
     }
