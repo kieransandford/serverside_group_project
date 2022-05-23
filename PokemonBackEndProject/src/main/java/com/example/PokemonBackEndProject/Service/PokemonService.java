@@ -1,5 +1,15 @@
 package com.example.PokemonBackEndProject.Service;
 
+import com.example.PokemonBackEndProject.model.Pokemon;
+import com.example.PokemonBackEndProject.repository.PokemonRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+import java.util.List;
+import java.util.Objects;
+
+@Service
 public class PokemonService {
     @Autowired
     private PokemonRepository pokemonRepository;
