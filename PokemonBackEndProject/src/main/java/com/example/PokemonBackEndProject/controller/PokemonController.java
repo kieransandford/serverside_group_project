@@ -22,7 +22,10 @@ public class PokemonController {
     }
 
     // CREATE - POST
+//    This Post and Get do not need an /{id} (because you do not have an id for it/ because you are trying to view all
+//    of them)
     @PostMapping("/pokemon")
+//    This creates a new Pokemon object (assigns it to an existing trainer)
     public ResponseEntity<List<Pokemon>> postPokemon(@RequestBody Pokemon pokemon) {
         pokemonRepository.save(pokemon);
         return new ResponseEntity<>(pokemonRepository.findAll(), HttpStatus.CREATED);
