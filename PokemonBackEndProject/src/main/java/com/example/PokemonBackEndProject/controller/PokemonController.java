@@ -12,22 +12,25 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("pokemon")
 public class PokemonController {
 
     @Autowired
-    PokemonRepository pokemonRepository;
+    private final PokemonRepository pokemonRepository;
+    
+    public PokemonController(PokemonRepository pokemonRepository){
+        this.pokemonRepository = pokemonRepository;
+    }
 
     // CREATE - POST
-    @PostMapping
+    @PostMapping("/pokemon")
     public ResponseEntity<List<Pokemon>> postPokemon(@RequestBody Pokemon pokemon) {
         pokemonRepository.save(pokemon);
         return new ResponseEntity<>(pokemonRepository.findAll(), HttpStatus.CREATED);
     }
 
     // READ - GET
-    @GetMapping
-    public ResponseEntity<List<Pokemon>> getAllPokemon(@RequestBody Pokemon pokemon) {
+    @GetMapping("/pokemon")
+    public ResponseEntity<List<Pokemon>> getAllPokemon() {
         return new ResponseEntity<>(pokemonRepository.findAll(), HttpStatus.OK);
     }
 
