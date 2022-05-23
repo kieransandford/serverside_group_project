@@ -2,17 +2,19 @@ package com.example.PokemonBackEndProject.controller;
 
 import com.example.PokemonBackEndProject.model.Pokemon;
 import com.example.PokemonBackEndProject.repository.PokemonRepository;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
 @RequestMapping("pokemon")
 public class PokemonController {
-    
+
     @Autowired
     PokemonRepository pokemonRepository;
 
@@ -29,9 +31,22 @@ public class PokemonController {
         return new ResponseEntity<>(pokemonRepository.findAll(), HttpStatus.OK);
     }
 
-//    // UPDATE - PUT
+    // UPDATE - PUT
 //    @PutMapping("/pokemon/{name}")
-//    public ResponseEntity<Pokemon> updatePokemon(@PathVariable(value = "name") String pokemonName), @Valid @RequestBody Pokemon pokemon) throws ResourceNotFoundException
+//    public ResponseEntity<Pokemon> updatePokemon(@PathVariable(value = "name") String pokemonName), @Valid
+//    @RequestBody Pokemon pokemon) throws ResourceNotFoundException {
+//    Pokemon pokemon = pokemonRepository.findByName(pokemon.getName())
+//            .orElseThrow(() -> new Exception ("Pokemon not found for this name :: " + pokemon.getName());
+//
+//    pokemon.setId(pokemon.getId());
+//    pokemon.setName(pokemon.getName());
+//    pokemon.setType(pokemon.getType());
+//    pokemon.setGeneration(pokemon.getGeneration());
+//    pokemon.setTrainer(pokemon.getTrainer());
+//
+//    final Pokemon updatedPokemon = pokemonRepository.save(pokemon);
+//    return ResponseEntity.ok(updatedPokemon);
+    }
 
     // DELETE
 }
