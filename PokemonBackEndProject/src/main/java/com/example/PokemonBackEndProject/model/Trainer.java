@@ -21,7 +21,7 @@ public class Trainer {
 
     // links the relationship from trainer to many pokemons that the trainer could own
     @OneToMany(mappedBy = "trainer", cascade = CascadeType.ALL) //CascadeType consists of operation PERSIST, MERGE, REMOVE, REFRESH and DETACH
-    @JsonIgnoreProperties(value = {"trainer"})
+    @JsonIgnoreProperties(value = {"trainer"}) //Required to ensure only the trainer and its pokemons are displayed, rather than looping through both tables (effectively break point)
     private List<Pokemon> pokemons; //listing the pokemon in the database that can be linked to the trainer
 
     public Trainer(Long id, String name, int age, String town){
