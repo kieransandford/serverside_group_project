@@ -1,5 +1,6 @@
 package com.example.PokemonBackEndProject.controller;
 
+import com.example.PokemonBackEndProject.Service.TrainerService;
 import com.example.PokemonBackEndProject.model.Trainer;
 import com.example.PokemonBackEndProject.repository.TrainerRepository;
 import org.apache.catalina.User;
@@ -14,6 +15,8 @@ import java.util.List;
 @RestController
 public class TrainerController {
     @Autowired
+    private TrainerService trainerService;
+    @Autowired
 //    This glues this class to the repository class
     private final TrainerRepository trainerRepository;
 
@@ -26,13 +29,28 @@ public class TrainerController {
         return new ResponseEntity<>(trainerRepository.findAll(), HttpStatus.OK);
    }
    @PostMapping("/trainer")
+//   This adds a new trainer and assigns it to an existing Pokemon.
     public ResponseEntity<List<Trainer>> postTrainer(@RequestBody Trainer trainer){
         trainerRepository.save(trainer);
         return new ResponseEntity<>(trainerRepository.findAll(), HttpStatus.CREATED);
    }
 
+   @PutMapping("/trainer/{id}")
+// Change the town of the trainer
+// These are the parameters for the method (PathVariable to String town)
+   /*
+   When looking at this in th path is localhost:8080.... trainer/id where id is a specific number (the id of the trainer
+   you want to update.
+    */
+    public void updateTrainer(
+            @PathVariable("id") Long trainerId,
+            @RequestParam(required = false) String town) {
+                trainerService.updateTrainer(trainerId, town);}
 
-
-
-
+    // DELETE
+    // deletes a trainer by id
+    @DeleteMapping(path = {"/trainer/{id}"})
+    public void deleteTrainer(@PathVariable("id") Long trainerId) {
+        trainerService.deleteTrainer(trainerId);
+    }
 }
