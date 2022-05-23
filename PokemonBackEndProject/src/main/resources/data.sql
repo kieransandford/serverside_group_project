@@ -4,8 +4,8 @@ INSERT INTO Trainer (id, name, age, town) VALUES (3,'Naeem',23,'Liverpool');
 INSERT INTO Trainer (id, name, age, town) VALUES (4,'Becca',26,'Hertfordshire');
 
 INSERT INTO Pokemon (ID, name, type, generation, trainer_id) VALUES(1, 'Butterfree', 'Bug-Flying', 1, 1);
-INSERT INTO Pokemon (ID, name, type, generation, trainer_id) VALUES(2, 'Raticate', 'Normal',1, 2,);
-INSERT INTO Pokemon (ID, name, type, generation, trainer_id) VALUES(3, 'Oddish', 'Grass-Poison',1, 4 ) ;
+INSERT INTO Pokemon (ID, name, type, generation, trainer_id) VALUES(2, 'Raticate', 'Normal',1, 2);
+INSERT INTO Pokemon (ID, name, type, generation, trainer_id) VALUES(3, 'Oddish', 'Grass-Poison',1, 4) ;
 INSERT INTO Pokemon (ID, name, type, generation, trainer_id) VALUES(4, 'Drowzee', 'Psychic',1, 4);
 INSERT INTO Pokemon (ID, name, type, generation, trainer_id) VALUES(5, 'Lickitung', 'Normal',1, 3);
 
