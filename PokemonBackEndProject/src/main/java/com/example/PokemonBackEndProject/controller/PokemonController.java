@@ -29,9 +29,9 @@ public class PokemonController {
         return new ResponseEntity<>(pokemonRepository.findAll(), HttpStatus.OK);
     }
 
-    // UPDATE - PUT
-    @PutMapping("/pokemon/{name}")
-    public ResponseEntity
+//    // UPDATE - PUT
+//    @PutMapping("/pokemon/{name}")
+//    public ResponseEntity<Pokemon> updatePokemon(@PathVariable(value = "name") String pokemonName), @Valid @RequestBody Pokemon pokemon) throws ResourceNotFoundException
 
     // DELETE
 
