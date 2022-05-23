@@ -13,6 +13,7 @@ public class Pokemon {
     private String type;
     private String generation;
     @ManyToOne
+//    @JoinColumn (name = "trainer_id", nullable = false)
     private Trainer trainer;
 //    no arg constructor
     public Pokemon(){

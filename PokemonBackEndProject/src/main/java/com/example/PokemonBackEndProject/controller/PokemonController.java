@@ -49,4 +49,8 @@ public class PokemonController {
     }
 
     // DELETE
-}
+//  @DeleteMapping("/pokemon/{name}")
+//  public Map<String, Boolean> deletePokemon(@PathVariable(value = "name") String pokemonName)
+//      throws ResourceNotFoundException {
+//          Pokemon pokemon = pokemonRepository.findByName(pokemonName)
+//              .orElseThrow(() -> new ResourceNotFoundException(
