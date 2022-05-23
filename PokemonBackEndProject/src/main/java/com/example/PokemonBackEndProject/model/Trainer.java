@@ -1,5 +1,7 @@
 package com.example.PokemonBackEndProject.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +21,7 @@ public class Trainer {
 
     // links the relationship from trainer to many pokemons that the trainer could own
     @OneToMany(mappedBy = "trainer", cascade = CascadeType.ALL) //CascadeType consists of operation PERSIST, MERGE, REMOVE, REFRESH and DETACH
-
+    @JsonIgnoreProperties(value = {"trainer"})
     private List<Pokemon> pokemons; //listing the pokemon in the database that can be linked to the trainer
 
     public Trainer(Long id, String name, int age, String town){
@@ -61,5 +63,10 @@ public class Trainer {
     public void setTown(String town){
         this.town = town;
     }
-
-}
+    public List<Pokemon> getPokemons() {
+        return this.pokemons;
+    }
+    public void setPokemons (List < Pokemon > pokemons) {
+        this.pokemons = pokemons;
+        }
+    }
