@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import java.util.List;
 
 @RestController
-@RequestMapping("trainers")
 public class TrainerController {
     @Autowired
 //    This glues this class to the repository class
