@@ -34,6 +34,4 @@ public class PokemonController {
 //    public ResponseEntity<Pokemon> updatePokemon(@PathVariable(value = "name") String pokemonName), @Valid @RequestBody Pokemon pokemon) throws ResourceNotFoundException
 
     // DELETE
-
-    
 }

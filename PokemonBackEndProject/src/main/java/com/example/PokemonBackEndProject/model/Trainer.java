@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Trainer {
     // Setting types and objects
 //    This auto generates the ID type

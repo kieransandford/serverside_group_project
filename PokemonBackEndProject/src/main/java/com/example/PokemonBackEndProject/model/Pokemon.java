@@ -12,17 +12,19 @@ public class Pokemon {
     private String name;
     private String type;
     private String generation;
-
+    @ManyToOne
+    private Trainer trainer;
 //    no arg constructor
     public Pokemon(){
     }
 
 //    arg constructor
-    public Pokemon(Long id, String name, String type, String generation){
+    public Pokemon(Long id, String name, String type, String generation, Trainer trainer){
         this.id = id;
         this.name = name;
         this.type = type;
         this.generation = generation;
+        this.trainer = trainer;
     }
 
 //    getters and setters
@@ -50,6 +52,12 @@ public class Pokemon {
     }
     public void setGeneration(String generation){
         this.generation = generation;
+    }
+    public Trainer getTrainer(){
+        return trainer;
+    }
+    public void setTrainer(Trainer trainer){
+        this.trainer = trainer;
     }
 
 }
