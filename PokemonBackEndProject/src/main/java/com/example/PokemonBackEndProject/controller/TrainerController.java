@@ -28,6 +28,17 @@ public class TrainerController {
     public ResponseEntity<List<Trainer>> getAllTrainers(){
         return new ResponseEntity<>(trainerRepository.findAll(), HttpStatus.OK);
    }
+
+   // GET MAP FOR TRAINER QUERY
+    @GetMapping
+    public ResponseEntity<List<Trainer>> getTrainerByTown (@RequestParam(required = false, name = "town") String town) {
+        if (town != null) {
+            return new ResponseEntity<>(trainerRepository.findByTown(town), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(trainerRepository.findAll(), HttpStatus.OK);
+        }
+    }
+
    @PostMapping("/trainer")
 //   This adds a new trainer and assigns it to an existing Pokemon.
     public ResponseEntity<List<Trainer>> postTrainer(@RequestBody Trainer trainer){
