@@ -20,8 +20,9 @@ public class TrainerController {
 //    This glues this class to the repository class
     private final TrainerRepository trainerRepository;
 
-    public TrainerController(TrainerRepository trainerRepository) {
+    public TrainerController(TrainerRepository trainerRepository, TrainerService trainerService) {
         this.trainerRepository = trainerRepository;
+        this.trainerService = trainerService;
     }
 //  Get all Trainers
    @GetMapping("/trainer")
