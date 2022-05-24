@@ -18,7 +18,7 @@ INSERT INTO Pokemon (id, name, type, generation, trainer_id) VALUES(10, 'Flaaffy
 
 INSERT INTO Pokemon (id, name, type, generation, trainer_id) VALUES(16, 'Piplup', 'Water', 4, 2);
 INSERT INTO Pokemon (id, name, type, generation, trainer_id) VALUES(17, 'Chatot', 'Normal, Flying', 4, 3);
-INSERT INTO Pokemon (id, name, type, generation, trainer_id) VALUES(18, 'Mantyke', 'Water', 4, 3);
+INSERT INTO Pokemon (id, name, type, generation, trainer_id) VALUES(18, 'Skorupi', 'Poison, Bug', 4, 3);
 INSERT INTO Pokemon (id, name, type, generation, trainer_id) VALUES(19, 'Togekiss', 'Fairy, Flying', 4, 4);
 INSERT INTO Pokemon (id, name, type, generation, trainer_id) VALUES(20, 'Mamoswine', 'Ice, Ground', 4, 1);
 
