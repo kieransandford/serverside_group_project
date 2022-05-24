@@ -42,6 +42,9 @@ public class TrainerController {
         }
     }
 
+
+
+
    @PostMapping("/trainer")
 //   This adds a new trainer and assigns it to an existing Pokemon.
     public ResponseEntity<List<Trainer>> postTrainer(@RequestBody Trainer trainer){
