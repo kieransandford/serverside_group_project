@@ -20,10 +20,12 @@ public class TrainerController {
 //    This glues this class to the repository class
     private final TrainerRepository trainerRepository;
 
-    public TrainerController(TrainerRepository trainerRepository) {
+    public TrainerController(TrainerRepository trainerRepository, TrainerService trainerService) {
         this.trainerRepository = trainerRepository;
+        this.trainerService = trainerService;
     }
 //  Get all Trainers
+
    @GetMapping("/trainer")
     public ResponseEntity<List<Trainer>> getAllTrainers(){
         return new ResponseEntity<>(trainerRepository.findAll(), HttpStatus.OK);
@@ -34,6 +36,7 @@ public class TrainerController {
         trainerRepository.save(trainer);
         return new ResponseEntity<>(trainerRepository.findAll(), HttpStatus.CREATED);
    }
+   //testcomment
 
    @PutMapping("/trainer/{id}")
 // Change the town of the trainer
