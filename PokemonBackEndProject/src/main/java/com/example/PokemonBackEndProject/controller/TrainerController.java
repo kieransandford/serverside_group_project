@@ -30,18 +30,13 @@ public class TrainerController {
    }
 
    // GET MAP FOR TRAINER QUERY
-    @GetMapping("/trainer/{town}")
-    public ResponseEntity<List<Trainer>> getTrainersByTown(@RequestParam(required = false, defaultValue = "false") boolean foundByTown) {
-
-        List<Trainer> trainers;
-        if (foundByTown) {
-            trainers = trainerRepository.findByTown();
+    @GetMapping
+    public ResponseEntity<List<Trainer>> getTrainerByTown (@RequestParam(required = false, name = "town") String town) {
+        if (town != null) {
+            return new ResponseEntity<>(trainerRepository.findByTown(town), HttpStatus.OK);
         } else {
-            trainers = trainerRepository.findAll();
+            return new ResponseEntity<>(trainerRepository.findAll(), HttpStatus.OK);
         }
-        return ResponseEntity
-                .ok()
-                .body(trainers);
     }
 
    @PostMapping("/trainer")
