@@ -11,10 +11,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.print.DocFlavor;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 
 @RestController
 public class PokemonController {
@@ -72,6 +74,14 @@ public class PokemonController {
                 .ok()
                 .body(pokemonSpecificType);
     }
-
-
+    //    Generate a random Pokemon by id (Pokemon of the day)
+    @GetMapping("pokemon/random")
+    public ResponseEntity<Optional<Pokemon>> getRandomPokemon(){
+//        Create a random long between 0 and the number of pokemon in Pokemon database (rounded)
+        Long random = Math.round((Math.random() * pokemonRepository.count()));
+        Optional<Pokemon> randomPoke = pokemonRepository.findById(random);
+        return ResponseEntity
+                .ok()
+                .body(randomPoke);
+    }
 }
