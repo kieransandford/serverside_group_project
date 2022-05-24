@@ -32,6 +32,7 @@ public class TrainerController {
    }
 
    // GET MAP FOR TRAINER QUERY
+//    Find the trainer by town
     @GetMapping
     public ResponseEntity<List<Trainer>> getTrainerByTown (@RequestParam(required = false, name = "town") String town) {
         if (town != null) {

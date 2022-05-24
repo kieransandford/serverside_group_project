@@ -2,6 +2,7 @@ package com.example.PokemonBackEndProject.controller;
 
 import com.example.PokemonBackEndProject.Service.PokemonService;
 import com.example.PokemonBackEndProject.model.Pokemon;
+import com.example.PokemonBackEndProject.model.Trainer;
 import com.example.PokemonBackEndProject.repository.PokemonRepository;
 import org.apache.catalina.User;
 import org.apache.coyote.Response;
@@ -71,4 +72,6 @@ public class PokemonController {
                 .ok()
                 .body(pokemonSpecificType);
     }
+
+
 }

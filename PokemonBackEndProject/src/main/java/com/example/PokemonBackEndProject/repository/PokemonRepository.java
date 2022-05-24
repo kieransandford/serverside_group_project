@@ -3,6 +3,8 @@ package com.example.PokemonBackEndProject.repository;
 import com.example.PokemonBackEndProject.model.Pokemon;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
