@@ -4,6 +4,7 @@ import com.example.PokemonBackEndProject.Service.PokemonService;
 import com.example.PokemonBackEndProject.model.Pokemon;
 import com.example.PokemonBackEndProject.repository.PokemonRepository;
 import org.apache.catalina.User;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @RestController
 public class PokemonController {
@@ -52,19 +54,21 @@ public class PokemonController {
         pokemonService.updatePokemon(pokemonId, name, type);
     }
 
-//    public ResponseEntity<Pokemon> updatePokemon (@RequestBody Pokemon pokemon){
-//        try{
-//            return new ResponseEntity<Pokemon>(pokemonRepository.save(pokemon),HttpStatus.OK);
-//        } catch (Exception e){
-//            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-//    }
-
-        // DELETE
-        // deletes pokemon by id
-        @DeleteMapping("/pokemon/{id}")
-        public void deletePokemon (@PathVariable(value = "id") Long pokemonId){
-            pokemonService.deletePokemon(pokemonId);
-        }
-
+    @DeleteMapping("/pokemon/{id}")
+    public void deletePokemon(@PathVariable(value = "id") Long pokemonId) {
+        pokemonService.deletePokemon(pokemonId);
     }
+
+    //  This finds all Pokemon of a specific type
+    @GetMapping("/pokemon/{type}")
+    public ResponseEntity<List<Pokemon>> getAllPokemon(@RequestParam(required = false) String type) {
+        List<Pokemon> pokemons = pokemonRepository.findAll();
+        List<Pokemon> pokemonSpecificType =
+                pokemons.stream()
+                        .filter(p -> p.getType().equals(type))
+                        .toList();
+        return ResponseEntity
+                .ok()
+                .body(pokemonSpecificType);
+    }
+}
