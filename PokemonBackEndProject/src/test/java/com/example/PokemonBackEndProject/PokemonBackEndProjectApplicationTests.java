@@ -34,6 +34,7 @@ class PokemonBackEndProjectApplicationTests {
 	}
 
 
+	// QUERY - Find trainers by town
 	@Test
 	public void canFindTrainerInLondon() {
 		List<Trainer> found = trainerRepository.findByTown("London");
