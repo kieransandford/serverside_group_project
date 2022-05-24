@@ -30,14 +30,24 @@ class PokemonBackEndProjectApplicationTests {
 
 	@Test
 	public void canChangeNameAndType() {
+		//Given - name
 		List<Pokemon> name = pokemonRepository.findByName("Skorupi");
+		//When - put method changes name
 		if (name.equals("Drapion")) {
-			assertThat(name).isEqualTo("Skorupi");
+
+		//Then - return that name has changed
+			assertThat(name).isEqualTo("Drapion");
+
+		//Given - type
 			List<Pokemon> type = pokemonRepository.findByType("Poison, Bug");
+		//When - put method changes typing
 			if (type.equals("Poison, Dark")) {
-				assertThat(type).isEqualTo("Poison, Bug");
+		//Then - return that it has changed its type
+				assertThat(type).isEqualTo("Poison, Dark");
 			}
 
 		}
 	}
+
+
 }
