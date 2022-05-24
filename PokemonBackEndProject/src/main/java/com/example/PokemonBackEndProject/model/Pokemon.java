@@ -16,6 +16,8 @@ public class Pokemon {
     private String type;
     @Enumerated(EnumType.STRING)
     private GenerationList generation;
+
+    private double price;
     @ManyToOne
 //    @JoinColumn (name = "trainer_id", nullable = false)
     private Trainer trainer;
@@ -24,12 +26,13 @@ public class Pokemon {
     }
 
 //    arg constructor
-    public Pokemon(Long id, String name, String type, GenerationList generation, Trainer trainer){
+    public Pokemon(Long id, String name, String type, GenerationList generation, Trainer trainer, double price){
         this.id = id;
         this.name = name;
         this.type = type;
         this.generation = generation;
         this.trainer = trainer;
+        this.price = price;
     }
 
     //    getters and setters
@@ -65,6 +68,11 @@ public class Pokemon {
         this.trainer = trainer;
     }
 
+    public double getPrice() {
+        return price;
+    }
 
-
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }

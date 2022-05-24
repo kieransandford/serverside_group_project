@@ -1,7 +1,9 @@
 package com.example.PokemonBackEndProject;
 
 import com.example.PokemonBackEndProject.model.Pokemon;
+import com.example.PokemonBackEndProject.model.Trainer;
 import com.example.PokemonBackEndProject.repository.PokemonRepository;
+import com.example.PokemonBackEndProject.repository.TrainerRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

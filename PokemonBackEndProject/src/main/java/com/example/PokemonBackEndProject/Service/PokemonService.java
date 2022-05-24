@@ -14,7 +14,7 @@ import java.util.Objects;
 public class PokemonService {
     @Autowired
     private PokemonRepository pokemonRepository;
-    @Transactional
+    @Transactional //Transactional is ...
     //PUT MAPPING
       /* Find the pokemon you want to update by id. If you cannot find it, display message that it does not exist.
     If the name/type of that pokemon is not null and is not equal to the name/type value you are trying to input, set
