@@ -1,5 +1,7 @@
 package com.example.PokemonBackEndProject.model;
 
+import com.example.PokemonBackEndProject.GenerationList;
+
 import javax.persistence.*;
 
 //This maps it to a table
@@ -9,9 +11,11 @@ public class Pokemon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column (nullable = false)
     private String name;
     private String type;
-    private String generation;
+    @Enumerated(EnumType.STRING)
+    private GenerationList generation;
     @ManyToOne
 //    @JoinColumn (name = "trainer_id", nullable = false)
     private Trainer trainer;
@@ -20,7 +24,7 @@ public class Pokemon {
     }
 
 //    arg constructor
-    public Pokemon(Long id, String name, String type, String generation, Trainer trainer){
+    public Pokemon(Long id, String name, String type, GenerationList generation, Trainer trainer){
         this.id = id;
         this.name = name;
         this.type = type;
@@ -28,7 +32,7 @@ public class Pokemon {
         this.trainer = trainer;
     }
 
-//    getters and setters
+    //    getters and setters
 
     public Long getId() {
         return this.id;
@@ -48,10 +52,10 @@ public class Pokemon {
     public void setType(String type){
         this.type = type;
     }
-    public String getGeneration() {
+    public GenerationList getGeneration() {
         return this.generation;
     }
-    public void setGeneration(String generation){
+    public void setGeneration(GenerationList generation){
         this.generation = generation;
     }
     public Trainer getTrainer(){
@@ -60,5 +64,7 @@ public class Pokemon {
     public void setTrainer(Trainer trainer){
         this.trainer = trainer;
     }
+
+
 
 }

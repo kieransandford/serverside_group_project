@@ -1,5 +1,6 @@
 package com.example.PokemonBackEndProject.Service;
 
+import com.example.PokemonBackEndProject.GenerationList;
 import com.example.PokemonBackEndProject.model.Pokemon;
 import com.example.PokemonBackEndProject.repository.PokemonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
