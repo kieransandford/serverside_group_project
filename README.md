@@ -9,25 +9,44 @@ We have achieved this by creating a virtual space for Pokemon Trainers and their
 #### WHAT OUR APPLICATION DOES:
 - For both the Pokemon and Trainer classes there are **CRUD methods**, allowing the user to modify the data held by the API:
 
-[POKEMON CRUD]
-[TRAINER CRUD]
+- [x] CREATE -> `POST`
+- [x] READ -> `GET`
+- [x] UPDATE -> `PUT`
+- [x] DELETE -> `DELETE`
+
+##### Pokemon:
+![image](https://user-images.githubusercontent.com/102289720/170242125-960d9bf0-8040-40ec-8332-c7e6b4e320e8.png)
+
+##### Trainer:
+![image](https://user-images.githubusercontent.com/102289720/170250617-6ca0a0e0-ec0d-4c2c-8c17-ac3f4fa8b4f6.png)  
 
 - **QUERIES**:
+     
+***Find Trainer by town:***  
+(**TrainerController** class)  
+![image](https://user-images.githubusercontent.com/102289720/170244819-2689ff53-7c63-46d6-ae09-0baac09e9ad4.png)  
 
-Find Pokemon by type:
-[SCREENSHOT]
+(**TrainerRepository** interface)  
+![image](https://user-images.githubusercontent.com/102289720/170244889-253d5ebc-4041-47cf-acf7-fbe698b37794.png)  
+   
+***Generate random Pokemon:***   
+(**PokemonController** class)  
+![image](https://user-images.githubusercontent.com/102289720/170245455-8717cc74-05bd-42b5-9fa6-49698bb3356d.png)  
+  
+(**PokemonRepository** interface)  
+![image](https://user-images.githubusercontent.com/102289720/170245627-d444bfdf-6b61-4187-93d5-7fc5740e5fa7.png) 
 
-Find Trainer by town:
-[SCREENSHOT]
+- **BUSINESS LOGIC**:  
+- We decided to add some business logic to our API, by allowing Trainers to purchase Pokemon with funds from their wallet.  
+(**Business** class)  
+![image](https://user-images.githubusercontent.com/102289720/170253659-91292f0b-259c-4ba6-a045-80470559329a.png)  
 
-Generate random Pokemon:
-[SCREENSHOT]
-
+   
 #### WHY WE USED CERTAIN TECHNOLOGIES:
 - [Swagger](https://swagger.io/) : This made it easy to see and test our CRUD methods
 - [H2](http://www.h2database.com/html/quickstart.html) : This was our preferred method as a group to test the connection and routes with our database (data.sql file)
 - [enums](https://www.w3schools.com/java/java_enums.asp): We used this for the Pokemon Generation field, to ensure that the only input allowed would be what we have classified in the enum. Every Pokemon has a specific Generation (from 1 to 9), and so it made sense to make these values fixed.
-- [testing](https://www.w3schools.blog/junit-tutorial): We made sure that we included the junit testing dependency to our pom.xml file in order to test our methods and overall functionality throughout the development of our API
+- [testing](https://www.w3schools.blog/junit-tutorial): We made sure that we included the junit testing dependency to our pom.xml file in order to test our methods and overall functionality throughout the development of our API  
 
 #### CHALLENGES WE FACED:
 - Working with **enums** was initially pretty tricky as we had multiple fields within each enum to work with, but after some research we managed to get them functioning successfully.

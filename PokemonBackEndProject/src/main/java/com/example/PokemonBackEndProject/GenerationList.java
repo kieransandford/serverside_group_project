@@ -2,14 +2,14 @@ package com.example.PokemonBackEndProject;
 
 public enum GenerationList {
 
-    KANTO(1, "I"),
-    JOHTO(2, "II"),
-    HOENN(3, "III"),
-    SINNOH(4, "IV"),
-    UNOVA(5, "V"),
-    KALOS(6, "VI"),
-    ALOLA(7, "VII"),
-    GALAR(8, "VIII");
+    Kanto(1, "I"),
+    Johto(2, "II"),
+    Hoenn(3, "III"),
+    Sinnoh(4, "IV"),
+    Unova(5, "V"),
+    Kalos(6, "VI"),
+    Alola(7, "VII"),
+    Galar(8, "VIII");
 
 
     GenerationList(int generationNumber, String numeral){
