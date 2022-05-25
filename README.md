@@ -21,14 +21,7 @@ We have achieved this by creating a virtual space for Pokemon Trainers and their
 ![image](https://user-images.githubusercontent.com/102289720/170242458-f3aaffd8-9fcb-4524-8fab-01df7f97aaf6.png)
 
 - **QUERIES**:
-
-***Find Pokemon by type:***  
-(**PokemonController** class)  
-![image](https://user-images.githubusercontent.com/102289720/170243036-eed5fe39-488d-4e39-8f44-eaa231c51851.png)  
-
-(**PokemonRepository** interface)   
-![image](https://user-images.githubusercontent.com/102289720/170243687-5df001e9-8d84-4076-8b68-9bcbe971e083.png)   
-   
+     
 ***Find Trainer by town:***  
 (**TrainerController** class)  
 ![image](https://user-images.githubusercontent.com/102289720/170244819-2689ff53-7c63-46d6-ae09-0baac09e9ad4.png)  
@@ -42,7 +35,6 @@ We have achieved this by creating a virtual space for Pokemon Trainers and their
   
 (**PokemonRepository** interface)  
 ![image](https://user-images.githubusercontent.com/102289720/170245627-d444bfdf-6b61-4187-93d5-7fc5740e5fa7.png)  
-   
    
 #### WHY WE USED CERTAIN TECHNOLOGIES:
 - [Swagger](https://swagger.io/) : This made it easy to see and test our CRUD methods
