@@ -19,17 +19,14 @@ public class BusinessTest {
                 20, trainer);
 
     }
-
+//  Tests buyPokemon() in the Trainer class
     @Test
     public void actuallybuyPokemon() {
-//        given
-
+//        given trainer and pokemon
 //        when
         trainer.buyPokemon(pokemon);
-
 //        then
         assertTrue(trainer.getPokemons().contains(pokemon));
-
     }
 
 
