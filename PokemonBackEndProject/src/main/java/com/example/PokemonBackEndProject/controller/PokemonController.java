@@ -80,7 +80,6 @@ public class PokemonController {
                 .ok()
                 .body(pokemonSpecificType);
     }
-
     // GET MAP FOR RANKING POKEMON
     @GetMapping ("/pokemon/rating")
     public ResponseEntity<List<Pokemon>> findByOrderByRatingDesc() {

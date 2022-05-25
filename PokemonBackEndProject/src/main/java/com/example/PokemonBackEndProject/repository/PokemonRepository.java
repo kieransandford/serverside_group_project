@@ -19,8 +19,6 @@ public interface PokemonRepository extends JpaRepository<Pokemon, Long> {
     //  The random Pokemon method uses this method to find a Pokemon at a random id index
     @Query(value = "SELECT * FROM Pokemon WHERE id = ?1", nativeQuery = true)
     Optional<Pokemon> findById(Long id);
-
-
     List<Pokemon> findByOrderByRatingDesc();
 
 }
