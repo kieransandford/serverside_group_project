@@ -15,7 +15,10 @@ public class Business {
         this.till = 0;
         this.pokemon = new ArrayList<>();
     }
-// unique methods to call upon
+    // unique logic methods to call upon:
+
+    // Adds money to the till when a trainer makes a successful purchase from the shop.
+    // Also removes the pokemon from its list. i.e. removes it from its stock
     public void sellPokemon(Trainer trainer, Pokemon pokemon) {
         if (trainer.canBuy(pokemon) == true) {
             trainer.buyPokemon(pokemon);
@@ -31,7 +34,7 @@ public class Business {
             }
             return total;
         }
-        //getters and setters
+
 
 public int pokeCount(){
         return this.pokemon.size();
@@ -41,6 +44,8 @@ public void addPoke(Pokemon pokemon){
         this.pokemon.add(pokemon);
 }
 
+
+    //getters and setters
     public String getNameshop() {
         return nameshop;
     }
