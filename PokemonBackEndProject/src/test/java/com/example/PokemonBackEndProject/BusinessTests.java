@@ -21,8 +21,8 @@ Pokemon pokemon1;
 @BeforeEach
 public void setUp(){
     trainer = new Trainer(1L,"Test",24,"Test",20);
-    pokemon = new Pokemon(1L,"Poke","Fairy",GenerationList.KANTO,234,10,trainer);
-    pokemon1 = new Pokemon(2L,"poke2","Dragon",GenerationList.HOENN,433,30,trainer);
+    pokemon = new Pokemon(1L,"Poke","Fairy",GenerationList.Kanto,234,10,trainer);
+    pokemon1 = new Pokemon(2L,"poke2","Dragon",GenerationList.Kalos,433,30,trainer);
 }
 
 @Test
