@@ -42,7 +42,8 @@ public class Trainer {
     public Trainer(){
     }
 
-// unique methods
+// method to have the trainer buy a pokemon if their wallet is greater than the pokemon price.
+    //otherwise it is not possible to purchase
     public boolean canBuy(Pokemon pokemon){
         if(pokemon.getPrice() <= this.wallet){
             return true;
@@ -50,11 +51,13 @@ public class Trainer {
         return false;
     }
 
+    // method for the trainer to purchase pokemon that takes away their wallet money from the cost
+    // adds this pokemon to the list of pokemon they own.
     public void buyPokemon(Pokemon pokemon){
         this.wallet -= pokemon.getPrice();
         this.pokemons.add(pokemon);
     }
-
+// returns the size of the pokemon a trainer owns.
     public int getPokemonCount(){
         return this.pokemons.size();
     }
