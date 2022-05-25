@@ -20,8 +20,6 @@ public class Trainer {
 
     private double wallet;
 
-
-
     // links the relationship from trainer to many pokemons that the trainer could own
     @OneToMany(mappedBy = "trainer", cascade = CascadeType.ALL) //CascadeType consists of operation PERSIST, MERGE, REMOVE, REFRESH and DETACH
     @JsonIgnoreProperties(value = {"trainer"}) //Required to ensure only the trainer and its pokemons are displayed, rather than looping through both tables (effectively break point)
@@ -35,8 +33,6 @@ public class Trainer {
         this.wallet = wallet;
         this.pokemons = new ArrayList<>();
         }
-
-
     // no arg constructor
 
     public Trainer(){

@@ -22,13 +22,17 @@ Pokemon pokemon1;
 public void setUp(){
     trainer = new Trainer(1L,"Test",24,"Test",20);
     pokemon = new Pokemon(1L,"Poke","Fairy",GenerationList.Kanto,234,10,trainer);
-    pokemon1 = new Pokemon(2L,"poke2","Dragon",GenerationList.Hoenn,433,30,trainer);
-    business = new Business("Poke Mart",200);
-    business.addPoke(pokemon);
-    business.addPoke(pokemon1);
-    business.setTill(200);
+// <<<<<<< feature-Testing-M
+//     pokemon1 = new Pokemon(2L,"poke2","Dragon",GenerationList.Kalos,433,30,trainer);
+// =======
+//     pokemon1 = new Pokemon(2L,"poke2","Dragon",GenerationList.Hoenn,433,30,trainer);
+//     business = new Business("Poke Mart",200);
+//     business.addPoke(pokemon);
+//     business.addPoke(pokemon1);
+//     business.setTill(200);
 
 
+// >>>>>>> main
 }
 
 // Testing to see if the canBuy method can tell the trainer they can or cannot afford the pokemon

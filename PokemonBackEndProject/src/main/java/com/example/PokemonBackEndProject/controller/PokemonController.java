@@ -38,10 +38,18 @@ public class PokemonController {
         return new ResponseEntity<>(pokemonRepository.findAll(), HttpStatus.CREATED);
     }
 
-    // READ - GET
+    // READ - GET - gets all Pokemon
     @GetMapping("/pokemon")
     public ResponseEntity<List<Pokemon>> getAllPokemon() {
         return new ResponseEntity<>(pokemonRepository.findAll(), HttpStatus.OK);
+    }
+//  Get a Pokemon by id number(long).
+    @GetMapping("/pokemon/id")
+    public ResponseEntity<Optional<Pokemon>> getPokemonById(@RequestParam(required = false) Long id){
+        Optional<Pokemon> chosen = pokemonRepository.findById(id);
+        return ResponseEntity
+                .ok()
+                .body(chosen);
     }
 
     // UPDATE - PUT
@@ -72,14 +80,11 @@ public class PokemonController {
                 .ok()
                 .body(pokemonSpecificType);
     }
-
     // GET MAP FOR RANKING POKEMON
     @GetMapping ("/pokemon/rating")
     public ResponseEntity<List<Pokemon>> findByOrderByRatingDesc() {
          return new ResponseEntity<>(pokemonRepository.findByOrderByRatingDesc(), HttpStatus.OK);
     }
-
-
 
     //    Generate a random Pokemon by id (Pokemon of the day)
     @GetMapping("pokemon/random")
@@ -95,5 +100,14 @@ public class PokemonController {
         return ResponseEntity
                 .ok()
                 .body(randomPoke);
+    }
+//      Get Pokemon when you've forgotten the exact name
+    @GetMapping("pokemon/similar")
+    public ResponseEntity<List<Pokemon>> findByNameLike(@RequestParam(required = false, name = "name") String name){
+        if (name != null){
+            return new ResponseEntity<>(pokemonRepository.findByNameLike(name), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(pokemonRepository.findAll(), HttpStatus.OK);
+        }
     }
 }

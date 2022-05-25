@@ -13,8 +13,7 @@ public class Business {
     public Business(String nameshop, double till) {
         this.nameshop = nameshop;
         this.till = 0;
-        this.pokemon = new ArrayList<>() {
-        };
+        this.pokemon = new ArrayList<>();
     }
     // unique logic methods to call upon:
 
@@ -27,7 +26,7 @@ public class Business {
             setTill(this.till + pokemon.getPrice());
         }
     }
-
+//      This calculates the total value of Pokemon in the store
         public double calcPokeValue(){
             double total = 0;
             for(Pokemon pokemon : this.pokemon){
