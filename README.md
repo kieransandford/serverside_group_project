@@ -38,8 +38,9 @@ We have achieved this by creating a virtual space for Pokemon Trainers and their
 
 - **BUSINESS LOGIC**:  
 - We decided to add some business logic to our API, by allowing Trainers to purchase Pokemon with funds from their wallet.  
+(**Business** class)  
+![image](https://user-images.githubusercontent.com/102289720/170253659-91292f0b-259c-4ba6-a045-80470559329a.png)  
 
-[SCREENSHOTS]
    
 #### WHY WE USED CERTAIN TECHNOLOGIES:
 - [Swagger](https://swagger.io/) : This made it easy to see and test our CRUD methods
