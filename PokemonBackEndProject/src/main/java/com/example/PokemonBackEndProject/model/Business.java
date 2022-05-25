@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Business {
-
+// defining variables
     private String nameshop;
     private double till;
     private ArrayList<Pokemon> pokemon;
 
-
+//Constructor
     public Business(String nameshop, double till) {
         this.nameshop = nameshop;
         this.till = 0;
         this.pokemon = new ArrayList<>() {
         };
     }
-
+// unique methods to call upon
     public void sellPokemon(Trainer trainer, Pokemon pokemon) {
         if (trainer.canBuy(pokemon) == true) {
             trainer.buyPokemon(pokemon);
@@ -32,6 +32,8 @@ public class Business {
             }
             return total;
         }
+        //getters and setters
+
 public int pokeCount(){
         return this.pokemon.size();
 }
