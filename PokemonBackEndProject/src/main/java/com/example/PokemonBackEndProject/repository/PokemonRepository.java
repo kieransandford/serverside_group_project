@@ -8,13 +8,19 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PokemonRepository extends JpaRepository<Pokemon, Long> {
+        //Get all Pokemon of a specific type
+//    @Query(value = "SELECT * FROM POKEMON WHERE TYPE = 'Normal' ", nativeQuery = true)
+//    List<Pokemon> findAllOfType();
 
     List<Pokemon> findByName(String name);
 
     List<Pokemon> findByType(String type);
 
     //  The random Pokemon method uses this method to find a Pokemon at a random id index
-    @Query(value = "SELECT * FROM Pokemon WHERE id = ?", nativeQuery = true)
+    @Query(value = "SELECT * FROM Pokemon WHERE id = ?1", nativeQuery = true)
     Optional<Pokemon> findById(Long id);
+
+
+    List<Pokemon> findByOrderByRatingDesc();
 
 }

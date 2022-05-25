@@ -2,7 +2,6 @@ package com.example.PokemonBackEndProject.controller;
 
 import com.example.PokemonBackEndProject.Service.PokemonService;
 import com.example.PokemonBackEndProject.model.Pokemon;
-import com.example.PokemonBackEndProject.model.Trainer;
 import com.example.PokemonBackEndProject.repository.PokemonRepository;
 import org.apache.catalina.User;
 import org.apache.coyote.Response;
@@ -11,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.print.DocFlavor;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
@@ -31,7 +29,7 @@ public class PokemonController {
     }
 
     // CREATE - POST
-//    @Post and @Get do not need an /{id} (because you do not have an id for it/ because you are trying to view all
+//    This Post and Get do not need an /{id} (because you do not have an id for it/ because you are trying to view all
 //    of them)
     @PostMapping("/pokemon")
 //    This creates a new Pokemon object (assigns it to an existing trainer)
@@ -74,7 +72,15 @@ public class PokemonController {
                 .ok()
                 .body(pokemonSpecificType);
     }
-    
+
+    // GET MAP FOR RANKING POKEMON
+    @GetMapping ("/pokemon/rating")
+    public ResponseEntity<List<Pokemon>> findByOrderByRatingDesc() {
+         return new ResponseEntity<>(pokemonRepository.findByOrderByRatingDesc(), HttpStatus.OK);
+    }
+
+
+
     //    Generate a random Pokemon by id (Pokemon of the day)
     @GetMapping("pokemon/random")
     public ResponseEntity<Optional<Pokemon>> getRandomPokemon(){
