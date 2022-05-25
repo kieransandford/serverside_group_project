@@ -75,8 +75,8 @@ public class PokemonController {
 
     // GET MAP FOR RANKING POKEMON
     @GetMapping ("/pokemon/rating")
-    public ResponseEntity<List<Pokemon>> orderByRating() {
-         return new ResponseEntity<>(pokemonRepository.findAll(), HttpStatus.OK);
+    public ResponseEntity<List<Pokemon>> findByOrderByRatingDesc() {
+         return new ResponseEntity<>(pokemonRepository.findByOrderByRatingDesc(), HttpStatus.OK);
     }
 
 
