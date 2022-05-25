@@ -18,7 +18,7 @@ We have achieved this by creating a virtual space for Pokemon Trainers and their
 ![image](https://user-images.githubusercontent.com/102289720/170242125-960d9bf0-8040-40ec-8332-c7e6b4e320e8.png)
 
 ##### Trainer:
-![image](https://user-images.githubusercontent.com/102289720/170242458-f3aaffd8-9fcb-4524-8fab-01df7f97aaf6.png)
+![image](https://user-images.githubusercontent.com/102289720/170250617-6ca0a0e0-ec0d-4c2c-8c17-ac3f4fa8b4f6.png)  
 
 - **QUERIES**:
      
