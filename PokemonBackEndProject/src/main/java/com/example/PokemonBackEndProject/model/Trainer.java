@@ -17,6 +17,8 @@ public class Trainer {
     private int age;
     private String town;
 
+    private double wallet;
+
 
 
     // links the relationship from trainer to many pokemons that the trainer could own
@@ -24,17 +26,35 @@ public class Trainer {
     @JsonIgnoreProperties(value = {"trainer"}) //Required to ensure only the trainer and its pokemons are displayed, rather than looping through both tables (effectively break point)
     private List<Pokemon> pokemons; //listing the pokemon in the database that can be linked to the trainer
 
-    public Trainer(Long id, String name, int age, String town){
+    public Trainer(Long id, String name, int age, String town, double wallet){
         this.id = id;
         this.name = name;
         this.age = age;
         this.town = town;
-        this.pokemons = new ArrayList<Pokemon>();
-    }
+        this.wallet = wallet;
+        }
+
 
     // no arg constructor
 
     public Trainer(){
+    }
+
+// unique methods
+    public boolean canBuy(Pokemon pokemon){
+        if(pokemon.getPrice() <= this.wallet){
+            return true;
+        }
+        return false;
+    }
+
+    public void buyPokemon(Pokemon pokemon){
+        this.wallet -= pokemon.getPrice();
+        this.pokemons.add(pokemon);
+    }
+
+    public int getPokemonCount(){
+        return this.pokemons.size();
     }
 
     // getters and setters
@@ -68,5 +88,12 @@ public class Trainer {
     }
     public void setPokemons (List < Pokemon > pokemons) {
         this.pokemons = pokemons;
+        }
+
+        public double getWallet(){
+        return wallet;
+        }
+        public void setWallet(double wallet){
+        this.wallet = wallet;
         }
     }
