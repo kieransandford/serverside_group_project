@@ -31,7 +31,7 @@ public class PokemonController {
     }
 
     // CREATE - POST
-//    This Post and Get do not need an /{id} (because you do not have an id for it/ because you are trying to view all
+//    @Post and @Get do not need an /{id} (because you do not have an id for it/ because you are trying to view all
 //    of them)
     @PostMapping("/pokemon")
 //    This creates a new Pokemon object (assigns it to an existing trainer)
@@ -74,11 +74,17 @@ public class PokemonController {
                 .ok()
                 .body(pokemonSpecificType);
     }
+    
     //    Generate a random Pokemon by id (Pokemon of the day)
     @GetMapping("pokemon/random")
     public ResponseEntity<Optional<Pokemon>> getRandomPokemon(){
 //        Create a random long between 0 and the number of pokemon in Pokemon database (rounded)
         Long random = Math.round((Math.random() * pokemonRepository.count()));
+//        Since we're rounding a long, the rounding could result in random = 0, and there is no Pokemon at such index.
+//        In this event, we will make random = 1.
+        if(random == 0){
+            random ++;
+        }
         Optional<Pokemon> randomPoke = pokemonRepository.findById(random);
         return ResponseEntity
                 .ok()

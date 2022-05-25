@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+/db/pokemon_db.mv.db
+/db/pokemon_db.trace.db

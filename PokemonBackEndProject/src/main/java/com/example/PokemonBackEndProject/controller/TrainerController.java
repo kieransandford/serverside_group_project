@@ -42,16 +42,12 @@ public class TrainerController {
         }
     }
 
-
-
-
    @PostMapping("/trainer")
 //   This adds a new trainer and assigns it to an existing Pokemon.
     public ResponseEntity<List<Trainer>> postTrainer(@RequestBody Trainer trainer){
         trainerRepository.save(trainer);
         return new ResponseEntity<>(trainerRepository.findAll(), HttpStatus.CREATED);
    }
-   //testcomment
 
    @PutMapping("/trainer/{id}")
 // Change the town of the trainer
