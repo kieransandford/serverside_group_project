@@ -28,3 +28,14 @@ INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALU
 INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(19, 'Togekiss', 'Fairy, Flying', 'Sinnoh', 545, 40, 4);
 INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(20, 'Mamoswine', 'Ice, Ground', 'Sinnoh', 530, 40, 1);
 
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(21, 'Snivy', 'Grass', 'Unova', 308, 45, null);
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(22, 'Emboar', 'Fire, Fight', 'Unova', 528, 45, null);
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(23, 'Oshawott', 'Water', 'Unova', 308, 45, null);
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(24, 'Herdier', 'Normal', 'Unova', 370, 45, null);
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(25, 'Zebstrika', 'Electric', 'Unova', 497, 45, null);
+
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(26, 'Quilladin', 'Grass', 'Kalos', 405, 50, null);
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(27, 'Delphox', 'Fire, Psychic', 'Kalos', 534, 50, null);
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(28, 'Greninja', 'Water, Dark', 'Kalos', 530, 50, null);
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(29, 'Spewpa', 'Bug', 'Kalos', 213, 50, null);
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(30,'Pancham', 'Fight', 'Kalos', 348, 50, null);
