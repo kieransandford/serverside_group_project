@@ -14,7 +14,13 @@ INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALU
 INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(7, 'Croconaw', 'Water', 'JOHTO', 405, 30, 2);
 INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(8, 'Furret', 'Normal', 'JOHTO', 415, 30, 3);
 INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(9, 'Crobat', 'Poison, Flying', 'JOHTO', 535, 30, 4);
-INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(10, 'Flaaffy', 'Elecrtic', 'JOHTO', 365, 30, 2);
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(10, 'Flaaffy', 'Electric', 'JOHTO', 365, 30, 2);
+
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(11, 'Sceptile', 'Grass', 'HOENN', 530, 35, 2);
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(12, 'Torchic', 'Fire', 'HOENN', 310, 35, 2);
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(13, 'Combusken', 'Fire, Fight', 'HOENN', 405, 35, 4);
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(14, 'Mudkip', 'Water', 'HOENN', 310, 35, 3);
+INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(15, 'Wurmple', 'Bug', 'HOENN', 195, 35, 1);
 
 INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(16, 'Piplup', 'Water', 'SINNOH', 314, 40, 2);
 INSERT INTO Pokemon (id, name, type, generation, rating, price, trainer_id) VALUES(17, 'Chatot', 'Normal, Flying', 'SINNOH', 411, 40, 3);
