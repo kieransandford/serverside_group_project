@@ -54,12 +54,13 @@ We have achieved this by creating a virtual space for Pokemon Trainers and their
 - Our **CRUD methods** would sporadically work and then not work, so it was a constant process of debugging and testing to make sure that our API remained functional.
 
 #### FEATURES WE HOPE TO IMPLEMENT IN THE FUTURE:
-- Ideally, we would like to flesh out our business framework where the user could purchase Pokemon as a Trainer
+- Add wildcard query which would help users trying to find a specific Pokemon when they can't remember the exact name
 - Create a specific query for evolving a Pokemon which is hooked to the PokemonController
 
 #### IDEAS FOR THE FRONT END:
 - Use the randomly generated Pokemon query to highlight the "Pokemon of the Day"
 - Use the find trainers by town query to "Find Trainers Near You"
+- Have a "marketplace" for Trainers to view and purchase all available Pokemon
 
 ### How to Install + Run the Project
 - Git clone the project to your own system
