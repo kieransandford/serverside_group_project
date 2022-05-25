@@ -67,4 +67,15 @@ public class TrainerController {
     public void deleteTrainer(@PathVariable("id") Long trainerId) {
         trainerService.deleteTrainer(trainerId);
     }
+
+    // GET MAP
+    // Get trainer by ID
+    @GetMapping("/trainer/id")
+    public ResponseEntity<List<Trainer>> getTrainerById (@RequestParam(required = false, name = "id") Long id) {
+        if (id != null) {
+            return new ResponseEntity<>(trainerRepository.getTrainerById(id), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(trainerRepository.findAll(), HttpStatus.OK);
+        }
+    }
 }
