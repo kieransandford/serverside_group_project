@@ -33,7 +33,7 @@ public class TrainerController {
 
    // GET MAP FOR TRAINER QUERY
 //    Find the trainer by town
-    @GetMapping
+    @GetMapping("/trainer/town")
     public ResponseEntity<List<Trainer>> getTrainerByTown (@RequestParam(required = false, name = "town") String town) {
         if (town != null) {
             return new ResponseEntity<>(trainerRepository.findByTown(town), HttpStatus.OK);
@@ -53,7 +53,7 @@ public class TrainerController {
 // Change the town of the trainer
 // These are the parameters for the method (PathVariable to String town)
    /*
-   When looking at this in th path is localhost:8080.... trainer/id where id is a specific number (the id of the trainer
+   When looking at this in the path is localhost:8080.... trainer/id where id is a specific number (the id of the trainer
    you want to update.
     */
     public void updateTrainer(

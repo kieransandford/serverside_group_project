@@ -38,10 +38,18 @@ public class PokemonController {
         return new ResponseEntity<>(pokemonRepository.findAll(), HttpStatus.CREATED);
     }
 
-    // READ - GET
+    // READ - GET - gets all Pokemon
     @GetMapping("/pokemon")
     public ResponseEntity<List<Pokemon>> getAllPokemon() {
         return new ResponseEntity<>(pokemonRepository.findAll(), HttpStatus.OK);
+    }
+//  Get a Pokemon by id number(long).
+    @GetMapping("/pokemon/id")
+    public ResponseEntity<Optional<Pokemon>> getPokemonById(@RequestParam(required = false) Long id){
+        Optional<Pokemon> chosen = pokemonRepository.findById(id);
+        return ResponseEntity
+                .ok()
+                .body(chosen);
     }
 
     // UPDATE - PUT
@@ -78,8 +86,6 @@ public class PokemonController {
     public ResponseEntity<List<Pokemon>> findByOrderByRatingDesc() {
          return new ResponseEntity<>(pokemonRepository.findByOrderByRatingDesc(), HttpStatus.OK);
     }
-
-
 
     //    Generate a random Pokemon by id (Pokemon of the day)
     @GetMapping("pokemon/random")
