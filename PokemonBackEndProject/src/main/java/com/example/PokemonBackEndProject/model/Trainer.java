@@ -33,6 +33,7 @@ public class Trainer {
         this.age = age;
         this.town = town;
         this.wallet = wallet;
+        this.pokemons = new ArrayList<>();
         }
 
 
