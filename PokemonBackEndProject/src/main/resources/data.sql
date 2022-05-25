@@ -1,7 +1,7 @@
-INSERT INTO Trainer (id, name, age, town) VALUES (1,'Michelle',23,'London');
-INSERT INTO Trainer (id, name, age, town) VALUES (2,'Kieran',24,'Manchester');
-INSERT INTO Trainer (id, name, age, town) VALUES (3,'Naeem',23,'Liverpool');
-INSERT INTO Trainer (id, name, age, town) VALUES (4,'Becca',26,'Hertfordshire');
+INSERT INTO Trainer (id, name, age, town, wallet) VALUES (1,'Michelle',23,'London', 100);
+INSERT INTO Trainer (id, name, age, town, wallet) VALUES (2,'Kieran',24,'Manchester', 100);
+INSERT INTO Trainer (id, name, age, town, wallet) VALUES (3,'Naeem',23,'Liverpool', 100);
+INSERT INTO Trainer (id, name, age, town, wallet) VALUES (4,'Becca',26,'Hertfordshire',100);
 
 INSERT INTO Pokemon (ID, name, type, generation, trainer_id) VALUES(1, 'Butterfree', 'Bug-Flying','KANTO' , 1);
 INSERT INTO Pokemon (ID, name, type, generation, trainer_id) VALUES(2, 'Raticate', 'Normal','KANTO', 2);
