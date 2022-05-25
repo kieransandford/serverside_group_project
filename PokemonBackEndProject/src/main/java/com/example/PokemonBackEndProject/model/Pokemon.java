@@ -19,6 +19,8 @@ public class Pokemon {
     private GenerationList generation;
 
     private double price;
+
+    private int rating;
     @ManyToOne
 //    @JoinColumn (name = "trainer_id", nullable = false)
     private Trainer trainer;
@@ -27,13 +29,15 @@ public class Pokemon {
     }
 
 //    arg constructor
-    public Pokemon(Long id, String name, String type, GenerationList generation, Trainer trainer, double price){
+    public Pokemon(Long id, String name, String type, GenerationList generation, int rating, double price, Trainer trainer){
         this.id = id;
         this.name = name;
         this.type = type;
         this.generation = generation;
-        this.trainer = trainer;
+        this.rating = rating;
         this.price = price;
+        this.trainer = trainer;
+
     }
 
     //    getters and setters
@@ -75,5 +79,13 @@ public class Pokemon {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }
