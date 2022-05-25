@@ -35,7 +35,7 @@ public class BusinessTest {
     }
 //  Tests buyPokemon() in the Trainer class
     @Test
-    public void actuallybuyPokemon() {
+    public void actuallyBuyPokemon() {
 //        given trainer and pokemon
 //        when
         trainer.buyPokemon(pokemon);
@@ -50,8 +50,5 @@ public class BusinessTest {
         business.calcPokeValue();
 //        then
         assertEquals(45, business.calcPokeValue());
-
     }
-
-
 }

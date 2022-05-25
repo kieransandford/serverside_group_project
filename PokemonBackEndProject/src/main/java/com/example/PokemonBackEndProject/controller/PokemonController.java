@@ -101,4 +101,13 @@ public class PokemonController {
                 .ok()
                 .body(randomPoke);
     }
+//      Get Pokemon when you've forgotten the exact name
+    @GetMapping("pokemon/similar")
+    public ResponseEntity<List<Pokemon>> findByNameLike(@RequestParam(required = false, name = "name") String name){
+        if (name != null){
+            return new ResponseEntity<>(pokemonRepository.findByNameLike(name), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(pokemonRepository.findAll(), HttpStatus.OK);
+        }
+    }
 }
