@@ -40,7 +40,13 @@ We have achieved this by creating a virtual space for Pokemon Trainers and their
 - [Swagger](https://swagger.io/) : This made it easy to see and test our CRUD methods
 - [H2](http://www.h2database.com/html/quickstart.html) : This was our preferred method as a group to test the connection and routes with our database (data.sql file)
 - [enums](https://www.w3schools.com/java/java_enums.asp): We used this for the Pokemon Generation field, to ensure that the only input allowed would be what we have classified in the enum. Every Pokemon has a specific Generation (from 1 to 9), and so it made sense to make these values fixed.
-- [testing](https://www.w3schools.blog/junit-tutorial): We made sure that we included the junit testing dependency to our pom.xml file in order to test our methods and overall functionality throughout the development of our API
+- [testing](https://www.w3schools.blog/junit-tutorial): We made sure that we included the junit testing dependency to our pom.xml file in order to test our methods and overall functionality throughout the development of our API  
+  
+- **BUSINESS LOGIC**:  
+- We decided to add some business logic to our API, by allowing Trainers to purchase Pokemon with funds from their wallet.  
+
+[SCREENSHOTS]
+
 
 #### CHALLENGES WE FACED:
 - Working with **enums** was initially pretty tricky as we had multiple fields within each enum to work with, but after some research we managed to get them functioning successfully.
