@@ -14,4 +14,8 @@ public interface PokemonRepository extends JpaRepository<Pokemon, Long> {
     List<Pokemon> findByName(String name);
 
     List<Pokemon> findByType(String type);
+
+    @Query(value = "SELECT * FROM pokemon ORDER BY rating DESC", nativeQuery = true)
+    List<Pokemon> orderByRating(int rating);
+
 }

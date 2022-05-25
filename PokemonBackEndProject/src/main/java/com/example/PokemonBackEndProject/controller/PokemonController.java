@@ -43,6 +43,7 @@ public class PokemonController {
         return new ResponseEntity<>(pokemonRepository.findAll(), HttpStatus.OK);
     }
 
+
     // UPDATE - PUT
     @PutMapping("/pokemon/{id}")
 // Change the name and type of the pokemon
@@ -71,4 +72,12 @@ public class PokemonController {
                 .ok()
                 .body(pokemonSpecificType);
     }
+
+    // GET MAP FOR RANKING POKEMON
+    @GetMapping ("/pokemon/rating")
+    public ResponseEntity<List<Pokemon>> orderByRating() {
+         return new ResponseEntity<>(pokemonRepository.findAll(), HttpStatus.OK);
+    }
+
+
 }

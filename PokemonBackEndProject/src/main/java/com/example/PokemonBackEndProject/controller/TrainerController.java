@@ -1,6 +1,7 @@
 package com.example.PokemonBackEndProject.controller;
 
 import com.example.PokemonBackEndProject.Service.TrainerService;
+import com.example.PokemonBackEndProject.model.Pokemon;
 import com.example.PokemonBackEndProject.model.Trainer;
 import com.example.PokemonBackEndProject.repository.TrainerRepository;
 import org.apache.catalina.User;
@@ -40,7 +41,6 @@ public class TrainerController {
             return new ResponseEntity<>(trainerRepository.findAll(), HttpStatus.OK);
         }
     }
-
 
 
 
