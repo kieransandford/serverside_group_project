@@ -9,7 +9,8 @@ import javax.persistence.*;
 public class Pokemon {
 //    Auto generates the id
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Pokemon_sequence")
+    @SequenceGenerator(name = "Pokemon_sequence", allocationSize = 1, initialValue = 21)
     private Long id;
     @Column (nullable = false)
     private String name;

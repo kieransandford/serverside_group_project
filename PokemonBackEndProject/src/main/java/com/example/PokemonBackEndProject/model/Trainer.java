@@ -11,7 +11,8 @@ public class Trainer {
     // Setting types and objects
 //    This auto generates the ID type
     @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Trainer_sequence")
+    @SequenceGenerator(name = "Trainer_sequence", allocationSize = 1, initialValue = 5)
     private Long id;
     private String name;
     private int age;
