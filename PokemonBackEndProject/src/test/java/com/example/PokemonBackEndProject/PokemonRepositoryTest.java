@@ -34,7 +34,7 @@ public class PokemonRepositoryTest {
         List<Pokemon> result = pokemonRepository.findByNameLike("ot");
 //		then:
 //		there should be 2 elements in the list as one Pokemon has a name that contain "ot".
-        assertEquals(result.size(), 1);
+        assertEquals(result.size(), 2);
 
     }
 

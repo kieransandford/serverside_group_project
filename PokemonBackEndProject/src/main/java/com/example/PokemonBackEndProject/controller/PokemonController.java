@@ -59,8 +59,9 @@ public class PokemonController {
     public void updatePokemon(
             @PathVariable("id") Long pokemonId,
             @RequestParam(required = false) String name,
-            @RequestParam(required = false) String type) {
-        pokemonService.updatePokemon(pokemonId, name, type);
+            @RequestParam(required = false) String type,
+            @RequestParam(required = false) int rating){
+        pokemonService.updatePokemon(pokemonId, name, type, rating);
     }
 
     @DeleteMapping("/pokemon/{id}")

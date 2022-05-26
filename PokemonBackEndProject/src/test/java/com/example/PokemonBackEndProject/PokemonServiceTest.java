@@ -8,11 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 public class PokemonServiceTest {
@@ -22,30 +21,24 @@ public class PokemonServiceTest {
     @Autowired
     PokemonRepository pokemonRepository;
 
+
     @Test
     void contextLoads() {
     }
+//    This tests the updatePokemon method in Pokemon Service
+            @Test
+             public void canUpdatePokemon(){
+            ///given
+            //when
+            pokemonService.updatePokemon(1l, "Butterfry", "Flying",400 );
+            Optional<Pokemon> pokemon = pokemonRepository.findById(1l);
 
-
-    @Test
-    public void canChangeNameAndType() {
-        //Given - name
-        Optional<Pokemon> name = pokemonRepository.findByName("Skorupi");
-        //When - put method changes name
-        if (name.get().getName().equals("Drapion")) {
-
-            //Then - return that name has changed
-            assertThat(name).isEqualTo("Drapion");
-
-            //Given - type
-            List<Pokemon> type = pokemonRepository.findByType("Poison, Bug");
-            //When - put method changes typing
-            if (type.equals("Poison, Dark")) {
-                //Then - return that it has changed its type
-                assertThat(type).isEqualTo("Poison, Dark");
-            }
+            //then
+            assertEquals(pokemon.get().getRating(), 400);
+            assertEquals(pokemon.get().getName(), "Butterfry");
+            assertEquals(pokemon.get().getType(), "Flying");
 
         }
     }
 
-}
+
