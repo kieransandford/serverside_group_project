@@ -13,7 +13,7 @@ public interface PokemonRepository extends JpaRepository<Pokemon, Long> {
 //    @Query(value = "SELECT * FROM POKEMON WHERE TYPE = 'Normal' ", nativeQuery = true)
 //    List<Pokemon> findAllOfType();
 
-    List<Pokemon> findByName(String name);
+    Optional<Pokemon> findByName(String name);
 
     List<Pokemon> findByType(String type);
 

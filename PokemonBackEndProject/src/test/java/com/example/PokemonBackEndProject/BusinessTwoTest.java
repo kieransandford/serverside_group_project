@@ -1,4 +1,4 @@
-package com.example.PokemonBackEndProject.controller;
+package com.example.PokemonBackEndProject;
 
 import com.example.PokemonBackEndProject.GenerationList;
 import com.example.PokemonBackEndProject.model.Business;
@@ -7,12 +7,10 @@ import com.example.PokemonBackEndProject.model.Trainer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class BusinessTest {
+public class BusinessTwoTest {
     Trainer trainer;
     Pokemon pokemon;
     Pokemon pokemon1;
@@ -51,4 +49,7 @@ public class BusinessTest {
 //        then
         assertEquals(45, business.calcPokeValue());
     }
+    
+    
+    
 }

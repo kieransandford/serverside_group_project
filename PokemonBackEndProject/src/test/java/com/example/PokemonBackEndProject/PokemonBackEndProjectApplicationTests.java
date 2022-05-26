@@ -9,15 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootTest
 class PokemonBackEndProjectApplicationTests {
-
-	@Autowired
-	private PokemonRepository pokemonRepository;
-
 	@Autowired
 	private TrainerRepository trainerRepository;
 
@@ -25,40 +23,9 @@ class PokemonBackEndProjectApplicationTests {
 	void contextLoads() {
 	}
 
-	@Test
-	public void	canFindPokemonButterfree() {
-		List<Pokemon> found = pokemonRepository.findByName("Butterfree");
-		assertThat(found).isEqualTo("Butterfree");
-	}
-
-	@Test
-	public void canChangeNameAndType() {
-		//Given - name
-		List<Pokemon> name = pokemonRepository.findByName("Skorupi");
-		//When - put method changes name
-		if (name.equals("Drapion")) {
-
-		//Then - return that name has changed
-			assertThat(name).isEqualTo("Drapion");
-
-		//Given - type
-			List<Pokemon> type = pokemonRepository.findByType("Poison, Bug");
-		//When - put method changes typing
-			if (type.equals("Poison, Dark")) {
-		//Then - return that it has changed its type
-				assertThat(type).isEqualTo("Poison, Dark");
-			}
-
-		}
-	}
 
 
 
-	// QUERY - Find trainers by town
-	@Test
-	public void canFindTrainerInLondon() {
-		List<Trainer> found = trainerRepository.findByTown("London");
-		assertThat(found.size()).isEqualTo(1);
-	}
+
 
 }
