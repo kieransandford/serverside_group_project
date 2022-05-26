@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
@@ -52,13 +53,24 @@ class PokemonBackEndProjectApplicationTests {
 		}
 	}
 
-
-
 	// QUERY - Find trainers by town
 	@Test
 	public void canFindTrainerInLondon() {
 		List<Trainer> found = trainerRepository.findByTown("London");
 		assertThat(found.size()).isEqualTo(1);
+	}
+
+//	Test findByNameLike method in PokemonRepository
+	@Test
+	public void canFindByNameLike(){
+//		given pokemonRepository
+//		when:
+//		we call the method, it returns a list of Pokemon with similar names to input.
+		List<Pokemon> result = pokemonRepository.findByNameLike("ot");
+//		then:
+//		there should be 2 elements in the list as two Pokemon have names that contain "ot".
+		assertEquals(result.size(), 2);
+
 	}
 
 }
