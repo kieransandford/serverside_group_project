@@ -2,7 +2,7 @@
 
 ## Project Title: Pokeverse
 The main goal of our project was to build a functioning back-end framework using **Java**, **Spring Boot** and an **SQL database**.
-We have achieved this by creating a virtual space for Pokemon Trainers and their Pokemon, with the ability to edit data and encourage a more social space through certain features.
+We have achieved this by creating a virtual space for Pokemon Trainers and their Pokemon, with the ability to edit data and encourage a more social environment through certain features.
 
 ### Project Description
 
