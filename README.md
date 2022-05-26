@@ -55,7 +55,7 @@ We have achieved this by creating a virtual space for Pokemon Trainers and their
 
 #### FEATURES WE HOPE TO IMPLEMENT IN THE FUTURE:
 - Use polymorphism for the Pokemon: Pokemon superclass which then has "Ordinary" and "Rare" subclasses inheriting properties from it (possible inclusion of the use of method overloading)
-- Create a specific query for evolving a Pokemon which is hooked to the PokemonController
+- Create a method which ensures that all transactions associated with the business logic (when a Trainer purchases a pokemon) gets automatically written into a text file as a financial invoice
 
 #### IDEAS FOR THE FRONT END:
 - Use the randomly generated Pokemon query to highlight the "Pokemon of the Day"
