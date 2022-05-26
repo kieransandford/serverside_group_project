@@ -8,18 +8,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
+
 @SpringBootTest
 public class PokemonServiceTest {
     @Autowired
     PokemonService pokemonService;
+
+    @Autowired
     PokemonRepository pokemonRepository;
 
     @Test
     void contextLoads() {
     }
+
 
     @Test
     public void canChangeNameAndType() {
@@ -41,4 +47,5 @@ public class PokemonServiceTest {
 
         }
     }
+
 }
