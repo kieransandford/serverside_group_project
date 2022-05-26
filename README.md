@@ -54,7 +54,7 @@ We have achieved this by creating a virtual space for Pokemon Trainers and their
 - Our **CRUD methods** would sporadically work and then not work, so it was a constant process of debugging and testing to make sure that our API remained functional.
 
 #### FEATURES WE HOPE TO IMPLEMENT IN THE FUTURE:
-- Use polymorphism for the Pokemon: Pokemon superclass which then has "Basic" and "Rare" subclasses inheriting properties from it (possible inclusion of the use of method overloading)
+- Use polymorphism for the Pokemon: Pokemon superclass which then has "Ordinary" and "Rare" subclasses inheriting properties from it (possible inclusion of the use of method overloading)
 - Create a specific query for evolving a Pokemon which is hooked to the PokemonController
 
 #### IDEAS FOR THE FRONT END:
