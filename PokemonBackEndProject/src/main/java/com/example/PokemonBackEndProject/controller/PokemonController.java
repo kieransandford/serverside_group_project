@@ -93,9 +93,9 @@ public class PokemonController {
 //        Create a random long between 0 and the number of pokemon in Pokemon database (rounded)
         Long random = Math.round((Math.random() * pokemonRepository.count()));
 //        Since we're rounding a long, the rounding could result in random = 0, and there is no Pokemon at such index.
-//        In this event, we will make random = 1.
+//        In this event, generate another random number (not make it 1).
         if(random == 0){
-            random ++;
+            random = Math.round((Math.random() * pokemonRepository.count()));
         }
         Optional<Pokemon> randomPoke = pokemonRepository.findById(random);
         return ResponseEntity

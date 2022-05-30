@@ -21,7 +21,8 @@ public class PokemonService {
     them to the new values that you have input.
      */
     public void updatePokemon(Long pokemonId, String name, String type, int rating){
-        Pokemon pokemon = pokemonRepository.findById(pokemonId).orElseThrow(()-> new IllegalStateException("Pokemon with " +pokemonId + " Does not exist!"));
+        Pokemon pokemon = pokemonRepository.findById(pokemonId).orElseThrow(()
+                -> new IllegalStateException("Pokemon with " +pokemonId + " Does not exist!"));
         if (pokemon.getName() != null  && !Objects.equals(pokemon.getName(), name)) {
             pokemon.setName(name);
         }
