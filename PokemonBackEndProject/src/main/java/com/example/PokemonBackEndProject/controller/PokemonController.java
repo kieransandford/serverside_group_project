@@ -90,12 +90,17 @@ public class PokemonController {
     //    Generate a random Pokemon by id (Pokemon of the day)
     @GetMapping("pokemon/random")
     public ResponseEntity<Optional<Pokemon>> getRandomPokemon(){
-//        Create a random long between 0 and the number of pokemon in Pokemon database (rounded)
-        Long random = Math.round((Math.random() * pokemonRepository.count()));
-//        Since we're rounding a long, the rounding could result in random = 0, and there is no Pokemon at such index.
-//        In this event, generate another random number (not make it 1).
-        if(random == 0){
+        Long random = Long.valueOf(0);
+        boolean loop = true;
+        while(loop) {
+//            Generate a random long between 0 and the number of pokemon in the database (rounded).
+//        This could equal to 0 but there is no Pokemon at index 0, so if that is the case, the loop continues and another
+//        random number is generated.
             random = Math.round((Math.random() * pokemonRepository.count()));
+            if(random != 0){
+//                If the number is not 0, then stop the loop because we've got our suitable number.
+                loop = false;
+            }
         }
         Optional<Pokemon> randomPoke = pokemonRepository.findById(random);
         return ResponseEntity
